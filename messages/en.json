@@ -1,0 +1,11 @@
+{
+  "Landing": {
+    "title": "Unlimited movies, TV shows, and more",
+    "description": "Watch anywhere. Cancel anytime",
+    "question": "Ready to watch? Enter your email to create or restart your membership."
+  },
+  "Email": {
+    "email": "Email address",
+    "start": "Get started"
+  }
+}
