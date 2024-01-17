@@ -25,7 +25,7 @@ export default function Subsc() {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="flex gap-3  mt-4">
-      <div className="inputField w-[427px]">
+      <div className="inputField md:w-[427px]">
         <input {...register("email")} />
         <label>{t("email")}</label>
       </div>

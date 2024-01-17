@@ -3,6 +3,7 @@ import React, { startTransition } from "react";
 import { Icons } from "./Icons";
 import { useRouter, usePathname } from "../navigation";
 import { useLocale } from "next-intl";
+import Link from "next/link";
 
 export default function Header() {
   const [isPending, startTransition] = React.useTransition();
@@ -31,9 +32,11 @@ export default function Header() {
             Georgian
           </option>
         </select>
-        <button className="bg-red-600 text-white p-1 px-2 rounded-md">
-          Sign in
-        </button>
+        <Link href="/login">
+          <button className="bg-red-600 text-white p-1 px-2 rounded-md cursor-pointer">
+            Sign in
+          </button>
+        </Link>
       </div>
     </header>
   );
