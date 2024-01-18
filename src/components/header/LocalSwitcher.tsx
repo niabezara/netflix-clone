@@ -35,15 +35,17 @@ const LocaleSwitcher: React.FC<LocaleSwitcherProps> = ({ isMenuOpen }) => {
   const toggleDropdown = () => setIsDropdownOpen(!isDropdownOpen);
 
   return (
-    <div className="pr-4 bg-transparent border-[#5E5E5E] border-[1px] rounded-sm py-1 px-4 mr-3">
-      <div className="relative pl-[5px] pr-[3px]">
+    <div
+      className={cn(
+        " bg-transparent border-[rgb(94,94,94)] border-[1px] rounded-sm py-1 pl-4 mr-3",
+        isDropdownOpen && "button"
+      )}
+    >
+      <div className="relative  w-[142px]">
         <button
           onClick={toggleDropdown}
           disabled={isPending}
-          className={cn(
-            "flex gap-4 items-center justify-center text-white ",
-            isMenuOpen && " border-8 border-white rounded-md"
-          )}
+          className="flex gap-4 items-center justify-center text-white "
         >
           <Icons.lang />
           <LocaleText locale={locale} isMenuOpen={isMenuOpen} />
@@ -51,13 +53,13 @@ const LocaleSwitcher: React.FC<LocaleSwitcherProps> = ({ isMenuOpen }) => {
         </button>
 
         {isDropdownOpen && (
-          <div className="absolute top-full left-[-15px] rounded-[4px] w-[126px] h-fit shadow-md bg-white text-black">
+          <div className="absolute top-full left-[-17px] rounded-[4px] w-[160px] h-fit shadow-md bg-white text-black">
             <div>
               {locales.map((item) => (
                 <button
                   key={item}
                   onClick={() => onLinkClickitem(item)}
-                  className="flex items-center text-black justify-center w-full h-[33px] cursor-pointer md:hover:bg-cyan-800 md:hover:text-white"
+                  className="flex items-center text-black justify-center w-full h-[33px] cursor-pointer md:hover:bg-sky-600 md:hover:text-white"
                 >
                   <LocaleText locale={item} isMenuOpen={isMenuOpen} />
                 </button>
