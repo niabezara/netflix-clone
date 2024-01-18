@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Ubuntu } from "next/font/google";
 import "../globals.css";
-import Header from "@/components/Header";
+import Header from "@/components/header/Header";
 import { NextIntlClientProvider, useMessages } from "next-intl";
 import { ReactNode } from "react";
 import { unstable_setRequestLocale } from "next-intl/server";

@@ -1,7 +1,7 @@
 import React from "react";
 import Subsc from "./Subsc";
 import { useTranslations } from "next-intl";
-import Header from "./Header";
+import Header from "./header/Header";
 
 export default function Landing() {
   const t = useTranslations("Landing");
