@@ -5,6 +5,8 @@ import AccountMenu from "../AccountMenu";
 import { IoIosArrowDown } from "react-icons/io";
 import { PiBell } from "react-icons/pi";
 import { SlMagnifier } from "react-icons/sl";
+import Link from "next/link";
+
 const list = [
   { title: "Home" },
   { title: "Series" },
@@ -17,36 +19,55 @@ const list = [
 export default function Navigation() {
   const [showBackground, setShowBackground] = useState(false);
   const [showAccountMenu, setShowAccountMenu] = useState(false);
+  const [showMobileMenu, setShowMobileMenu] = useState(false);
   const toggleAccountMenu = useCallback(() => {
     setShowAccountMenu((current) => !current);
   }, []);
 
+  const toggleMobileMenu = useCallback(() => {
+    setShowMobileMenu((current) => !current);
+  }, []);
   return (
     <nav className="w-full fixed z-40 text-white">
       <div
-        className={`px-4 md:px-16 py-6 flex flex-row items-center transition duration-500 ${
+        className={`pr-4  md:px-16 py-6 flex flex-row items-center transition duration-500 ${
           showBackground ? "bg-zinc-900 bg-opacity-90" : ""
         }`}
       >
-        <Icons.logo width="167px" height="30px" />
-        <div className="flex-row ml-8 gap-7 hidden lg:flex">
+        <Link href="/">
+          <Icons.logo width="120px" height="30px" />
+        </Link>
+        <div className="flex-row ml-8 gap-7 hidden lg:flex cursor-pointer">
           {list.map((item) => {
             return <div>{item.title}</div>;
           })}
         </div>
-        {/* <div
+        {/* mobile menu */}
+        <div
           onClick={toggleMobileMenu}
-          className="lg:hidden flex flex-row items-center gap-2 ml-8 cursor-pointer relative"
+          className="lg:hidden flex flex-row items-center gap-2 cursor-pointer relative"
         >
           <p className="text-white text-sm">Browse</p>
-          <ChevronDownIcon
+          <IoIosArrowDown
             className={`w-4 text-white fill-white transition ${
               showMobileMenu ? "rotate-180" : "rotate-0"
             }`}
           />
-          <MobileMenu visible={showMobileMenu} />
-        </div> */}
-        <div className="flex flex-row ml-auto gap-7 items-center">
+          {showMobileMenu && (
+            <div className="bg-black w-56 absolute top-8 left-[-67px] py-5 flex-col border-2 border-gray-800 flex">
+              <div className="flex flex-col gap-4">
+                {list.map((item) => {
+                  return (
+                    <div className="px-3 text-center text-white hover:underline">
+                      {item.title}
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          )}
+        </div>
+        <div className="flex flex-row ml-auto md:gap-7 items-center">
           <div className="text-gray-200 hover:text-gray-300 cursor-pointer transition">
             <SlMagnifier className="w-8" />
           </div>

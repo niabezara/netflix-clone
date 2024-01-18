@@ -13,8 +13,8 @@ export const Icons = {
   logo: (props: { width?: string; height?: string | undefined }) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      height={props.height || "800"}
-      width={props.width || "1200"}
+      height={props.height || "55"}
+      width={props.width || "155"}
       viewBox="-153.6 -69.1855 1331.2 415.113"
     >
       <path
