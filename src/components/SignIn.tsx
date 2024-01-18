@@ -24,11 +24,23 @@ export default function SignIn() {
         <h2 className="text-white text-4xl mb-8 font-semibold">Sign In</h2>
         <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4">
           <div className="inputField bg-[#333] ">
-            <input {...register("email")} />
+            <input
+              type="text"
+              id="email"
+              placeholder=""
+              {...register("email", { required: true })}
+              autoComplete="off"
+            />
             <label>email</label>
           </div>
           <div className="inputField bg-[#333] ">
-            <input {...register("password")} />
+            <input
+              type="text"
+              id="password"
+              placeholder=""
+              {...register("password", { required: true })}
+              autoComplete="off"
+            />
             <label>password</label>
           </div>
           <button className="bg-red-600 py-3 text-white rounded-md cursor-pointer w-full mt-10 hover:bg-red-700 transition">
