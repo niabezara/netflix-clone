@@ -60,7 +60,8 @@ body {
     color: #fff;
   }
 
-  .inputField input:focus + label {
+  .inputField input:focus + label,
+  .inputField input:not(:placeholder-shown) + label {
     top: 7px;
     -webkit-transform: scale(0.7) translateY(-50%) translateX(-8.5px);
     transform: scale(0.7) translateY(-50%) translateX(-8.5px);
