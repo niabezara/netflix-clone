@@ -12,7 +12,6 @@ interface LocaleSwitcherProps {
 
 const LocaleText: React.FC<{ locale: string; isMenuOpen?: boolean }> = ({
   locale,
-  isMenuOpen,
 }) => {
   return <span>{locale === "ka" ? "Georgian" : "English"}</span>;
 };

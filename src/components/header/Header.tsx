@@ -7,13 +7,7 @@ import Link from "next/link";
 import LocaleSwitcher from "./LocalSwitcher";
 
 export default function Header() {
-  const [isPending, startTransition] = React.useTransition();
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-  const locale = useLocale();
-
-  const toggleSidebar = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
 
   return (
     <header className="px-8 py-6 w-full absolute z-10 flex justify-between items-center">

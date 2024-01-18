@@ -4,6 +4,8 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { SigninValidationSchema, signinValidationSchema } from "@/utils/schema";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useRouter } from "next/router";
+import { cn } from "@/utils";
 
 export default function SignIn() {
   const {
@@ -17,13 +19,21 @@ export default function SignIn() {
     },
   });
 
-  const onSubmit = async () => {};
+  const onSubmit = async () => {
+    const router = useRouter();
+    router.push("/profile");
+  };
   return (
     <div className="flex justify-center ">
       <div className="self-center mt-2 bg-black bg-opacity-75 py-16 px-16 lg:max-w-[450px] lg:w-2/5 lg:max0w-md rounded-md w-full">
         <h2 className="text-white text-4xl mb-8 font-semibold">Sign In</h2>
         <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4">
-          <div className="inputField bg-[#333] ">
+          <div
+            className={cn(
+              "inputField bg-[#333] ",
+              errors.email && "border-b-2 rounded-[6px] border-amber-600"
+            )}
+          >
             <input
               type="text"
               id="email"
@@ -33,7 +43,12 @@ export default function SignIn() {
             />
             <label>email</label>
           </div>
-          <div className="inputField bg-[#333] ">
+          <div
+            className={cn(
+              "inputField bg-[#333] ",
+              errors.email && "border-b-2 rounded-[6px] border-amber-600"
+            )}
+          >
             <input
               type="text"
               id="password"
