@@ -13,6 +13,8 @@ pnpm dev
 # or
 bun dev
 ```
+![image](https://github.com/niabezara/netflix-clone/assets/118462345/dcdbfb02-ae28-474a-b591-4260a8f4805c)
+
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
