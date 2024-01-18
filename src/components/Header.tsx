@@ -32,7 +32,7 @@ export default function Header() {
             Georgian
           </option>
         </select>
-        <Link href="/login">
+        <Link href="/auth">
           <button className="bg-red-600 text-white p-1 px-2 rounded-md cursor-pointer">
             Sign in
           </button>

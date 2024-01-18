@@ -25,7 +25,6 @@ export default function RootLayout({ children, params: { locale } }: Props) {
     <html lang={locale}>
       <body className={ubuntu.className}>
         <NextIntlClientProvider locale={locale} messages={messages}>
-          <Header />
           {children}
         </NextIntlClientProvider>
       </body>
