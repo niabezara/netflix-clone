@@ -78,6 +78,28 @@ body {
     -webkit-transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
     transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
   }
+  .swiper-button-prev,
+  .swiper-button-next {
+    width: 47.34px !important;
+    height: 47.34px !important;
+    color: white !important;
+    background-color: #2e40de !important;
+  }
+  .swiper-button-prev.swiper-button-disabled,
+  .swiper-button-next.swiper-button-disabled {
+    background-color: white !important;
+    color: #2e40de !important;
+    opacity: 1 !important;
+  }
+
+  .swiper-button-next::after,
+  .swiper-button-prev::after {
+    font-size: 15.27px !important;
+  }
+
+  .swiper-button-next.swiper-button-disabled ::after {
+    color: white !important;
+  }
 }
 
 @layer utilities {

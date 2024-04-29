@@ -1,7 +1,7 @@
 "use client";
 import { cn } from "@/utils";
 import * as React from "react";
-import { Icons } from "../Icons";
+import { Icons } from "../shared/Icons";
 import { useRouter, usePathname } from "../../navigation";
 import { locales } from "@/config";
 import { useLocale } from "next-intl";
@@ -36,18 +36,20 @@ const LocaleSwitcher: React.FC<LocaleSwitcherProps> = ({ isMenuOpen }) => {
   return (
     <div
       className={cn(
-        " bg-transparent border-[rgb(94,94,94)] border-[1px] rounded-sm py-1 pl-4 mr-3",
+        " bg-transparent border-[rgb(94,94,94)] border-[1px] rounded-sm py-1 pl-4 lg:mr-3 h-fit",
         isDropdownOpen && "button"
       )}
     >
-      <div className="relative  w-[142px]">
+      <div className="relative lg:w-[142px]">
         <button
           onClick={toggleDropdown}
           disabled={isPending}
           className="flex gap-4 items-center justify-center text-white "
         >
           <Icons.lang />
-          <LocaleText locale={locale} isMenuOpen={isMenuOpen} />
+          <div className="hidden lg:flex">
+            <LocaleText locale={locale} isMenuOpen={isMenuOpen} />
+          </div>
           <Icons.arrowDownIcon />
         </button>
 

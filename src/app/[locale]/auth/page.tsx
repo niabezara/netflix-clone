@@ -1,5 +1,5 @@
-import { Icons } from "@/components/Icons";
-import SignIn from "@/components/SignIn";
+import { Icons } from "@/components/shared/Icons";
+import SignIn from "@/components/login/SignIn";
 import React from "react";
 
 export default function page() {

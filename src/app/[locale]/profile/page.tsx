@@ -1,10 +1,14 @@
-import Navigation from "@/components/header/Navigation";
+import Home from "@/components/homepage/Home";
 import React from "react";
 
-export default function page() {
+interface PageProps {}
+
+const Page: React.FC<PageProps> = ({}) => {
   return (
-    <div>
-      <Navigation />
-    </div>
+    <>
+      <Home />
+    </>
   );
-}
+};
+
+export default Page;

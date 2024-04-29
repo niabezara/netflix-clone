@@ -1,6 +1,6 @@
 "use client";
 import React, { startTransition } from "react";
-import { Icons } from "../Icons";
+import { Icons } from "../shared/Icons";
 import { useRouter, usePathname } from "../../navigation";
 import { useLocale } from "next-intl";
 import Link from "next/link";
@@ -10,8 +10,8 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
   return (
-    <header className="px-8 py-6 w-full absolute z-10 flex justify-between items-center">
-      <Icons.logo width="155px" height="55px" />
+    <header className="px-6 lg:px-8 py-6 w-full absolute z-10 flex justify-between items-center">
+      <Icons.logo width="100px" height="50px" />
       <div className="flex gap-4">
         <LocaleSwitcher isMenuOpen={isMenuOpen} />
         <Link href="/auth">

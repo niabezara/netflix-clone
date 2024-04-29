@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-
 import { useForm } from "react-hook-form";
 import { SigninValidationSchema, signinValidationSchema } from "@/utils/schema";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -20,8 +19,8 @@ export default function SignIn() {
   });
 
   const onSubmit = async () => {
-    const router = useRouter();
-    router.push("/profile");
+    // const router = useRouter();
+    // router.push("/profile");
   };
   return (
     <div className="flex justify-center ">
@@ -62,10 +61,12 @@ export default function SignIn() {
             Sign In
           </button>
           <p className="text-neutral-500 mt-12">
-            New to Netflix?{" "}
-            <span className="text-white ml-1 hover:underline cursor-pointer">
-              Sign up now.
-            </span>{" "}
+            New to Netflix?
+            <a href="/">
+              <span className="text-white ml-1 hover:underline cursor-pointer">
+                Sign up now.
+              </span>{" "}
+            </a>
           </p>
         </form>
       </div>

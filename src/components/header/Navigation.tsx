@@ -1,19 +1,20 @@
 "use client";
 import React, { useCallback, useState } from "react";
-import { Icons } from "../Icons";
+import { Icons } from "../shared/Icons";
 import AccountMenu from "../AccountMenu";
 import { IoIosArrowDown } from "react-icons/io";
 import { PiBell } from "react-icons/pi";
 import { SlMagnifier } from "react-icons/sl";
 import Link from "next/link";
+import Image from "next/image";
 
 const list = [
-  { title: "Home" },
-  { title: "Series" },
-  { title: "Films" },
-  { title: "New & Popular" },
-  { title: "My List" },
-  { title: "Browse by Languages" },
+  { id: 1, title: "Home" },
+  { id: 2, title: "Series" },
+  { id: 3, title: "Films" },
+  { id: 4, title: "New & Popular" },
+  { id: 5, title: "My List" },
+  { id: 6, title: "Browse by Languages" },
 ];
 
 export default function Navigation() {
@@ -28,7 +29,7 @@ export default function Navigation() {
     setShowMobileMenu((current) => !current);
   }, []);
   return (
-    <nav className="w-full fixed z-40 text-white">
+    <nav className="w-full  z-40 text-white">
       <div
         className={`pr-4  md:px-16 py-6 flex flex-row items-center transition duration-500 ${
           showBackground ? "bg-zinc-900 bg-opacity-90" : ""
@@ -39,7 +40,7 @@ export default function Navigation() {
         </Link>
         <div className="flex-row ml-8 gap-7 hidden lg:flex cursor-pointer">
           {list.map((item) => {
-            return <div>{item.title}</div>;
+            return <div key={item.id}>{item.title}</div>;
           })}
         </div>
         {/* mobile menu */}
@@ -58,7 +59,10 @@ export default function Navigation() {
               <div className="flex flex-col gap-4">
                 {list.map((item) => {
                   return (
-                    <div className="px-3 text-center text-white hover:underline">
+                    <div
+                      key={item.id}
+                      className="px-3 text-center text-white hover:underline"
+                    >
                       {item.title}
                     </div>
                   );
@@ -79,7 +83,12 @@ export default function Navigation() {
             className="flex flex-row items-center gap-2 cursor-pointer relative"
           >
             <div className="w-6 h-6 lg:w-10 lg:h-10 rounded-md overflow-hidden">
-              <img src="/images/default-blue.png" alt="" />
+              <Image
+                src="/images/default-blue.png"
+                alt=""
+                width={500}
+                height={500}
+              />
             </div>
             <IoIosArrowDown
               className={`w-4 text-white fill-white transition ${
