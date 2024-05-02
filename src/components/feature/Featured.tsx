@@ -36,13 +36,22 @@ export default function Featured({ type }: any) {
           </select>
         </div>
       )}
-      <Image
-        src="https://images.pexels.com/photos/6899260/pexels-photo-6899260.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
-        alt=""
-        width={500}
-        height={500}
-        className="w-full object-cover h-full"
-      />
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="w-full h-full object-cover"
+      >
+        <source src="/360.mp4" type="video/mp4" />
+        <track
+          src="/path/to/captions.vtt"
+          kind="subtitles"
+          srcLang="en"
+          label="English"
+        />
+        Your browser does not support the video tag.
+      </video>
       <div className=" w-[35%] absolute left-[50px] bottom-24 text-white flex flex-col">
         <Image
           src="https://occ-0-1432-1433.1.nflxso.net/dnm/api/v6/LmEnxtiAuzezXBjYXPuDgfZ4zZQ/AAAABUZdeG1DrMstq-YKHZ-dA-cx2uQN_YbCYx7RABDk0y7F8ZK6nzgCz4bp5qJVgMizPbVpIvXrd4xMBQAuNe0xmuW2WjoeGMDn1cFO.webp?r=df1"
